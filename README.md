@@ -2,6 +2,8 @@
 
 Plant Care Information app for COMP 422
 
+Current code based/built off of NavTest example to allow exploration of different principles
+
 ## Parts of the App
 
 * Loading Page: info pending

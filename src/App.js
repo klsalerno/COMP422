@@ -23,6 +23,30 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // create object for stack navigator
 const Stack = createNativeStackNavigator();
 
+// function to check if the platform is iOS
+const isIOS = () => {
+	return Platform.OS === 'ios';
+};
+
+// define custom fonts
+const fontFamilies = {
+	GAMJA_FLOWER: {
+		regular: 'GamjaFlowerRegular',
+	},
+	SOURCE_SANS3: {
+		regular: 'SourceSans3Regular',
+		bold: 'SourceSans3SemiBold',
+	},
+};
+
+// function to get the correct font
+const getFontFamily = (isLTR, weight) => {
+	const selectedFontFamily = isLTR
+	? fontFamilies.GAMJA_FLOWER
+	: fontFamilies.SOURCE_SANS3;
+	return selectedFontFamily[weight];
+};
+
 /* utility components
 *  - container for screen
 *  - text content with custom style
@@ -129,7 +153,7 @@ class HomeScreen extends Component {
 				<SearchContent mainStyle={styles.search} content="Search here..." />
 				<MainContent mainStyle={styles.content} content={
 					<Text>
-						<Text style={styles.boldText}>{
+						<Text style={{ fontFamily: getFontFamily(true, 'regular'), fontSize: 20 }}>{
 							"Buttercup (Ranunculaceae) Family\n" + 
 							"Cotton (Malvaceae) Family\n" +
 							"Daisy (Asteraceae) Family\n" +

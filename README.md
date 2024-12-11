@@ -2,16 +2,19 @@
 
 Plant Care Information app for COMP 422
 
-Current code based/built off of NavTest example to allow exploration of different principles
-
 ## Parts of the App
 
-* Loading Page: info pending
-* Home Page: info pending
-* Help/About Page: info pending
-* Plant Information Page: info pending
-* etc.
+* Loading Screen: info pending
+* Home Screen: Displays list of plant families for the user to select in order to find a specific plant
+* Help/About Screen: Provides information about the app and navigation to the user
+* Plant List Screen: Displays a list of the plants within a given plant family
+* Plant Information Screen: Describes details about a plant and its care to the user along with an image of the plant
+* Watering Log Screen: Allows the user to create and view records of when they water their plants
 
 ## Data for Project
 
-* API: decision pending
+* API: [Perenual API](https://perenual.com/docs/api)
+
+## Running Code
+
+`npm start -- --reset-cache`

@@ -9,6 +9,7 @@ import { Button, Text, View } from 'react-native';
 
 // import default styles
 import { styles } from '../styles/default.js';
+import { getFontFamily } from '../utils/fontFamily.ts';
 
 /* 
 * CONTENT
@@ -26,63 +27,52 @@ const Wrapper = props => {
 
 }
 
-const Main = props => {
+const Container = ({ children }) => (
+	<View style={styles.container}>
+	  {children}
+	</View>
+  );
 
-	return (
-		<View style={props.style}>
-			<Content style={styles.defaultContent}>
-				{props.children}
-			</Content>
-		</View>
-	);
-
-}
-
-const Header = props => {
-
-	return (
-		<View style={props.style}>
-			<Text style={props.type}>{props.heading}</Text>
-		</View>
-	);
-
-}
-
-const Content = props => {
-	
-	return (
-		<View style={props.style}>
-			{props.children}
-		</View>
-	);
-}
-
-const ContentText = props => {
-
-	return (
-		<Text style={props.style}>
-			{props.children}
-		</Text>
-	);
-
-}
-
-const NavButton = props => {
-
-	return (
-		<Button
-		 	color={props.color}
-      title={props.screenName}
-			onPress={props.onPress}
-    />
-	);
-
-}
-
-export {
-	ContentText,
-	Header,
-	Main,
-	NavButton,
-	Wrapper
-}; 
+// Functional Component for Header
+const Header = ({ headingStyle, title }) => (
+	<View style={headingStyle}>
+	  <Text style={[styles.headingText, {fontFamily: getFontFamily(true, 'regular')}]}>{title}</Text>
+	</View>
+);
+  
+// Functional Component for Main Content
+const MainContent = ({ mainStyle, content, children }) => (
+	<View style={mainStyle}>
+	  <Text style={[styles.contentText, {fontFamily: getFontFamily(false, 'regular')}]}>
+		{content}
+		{children}
+	  </Text>
+	</View>
+);
+  
+// Functional Component for Subtitle Content
+const SubContent = ({ mainStyle, content, children }) => (
+	<View style={mainStyle}>
+	  <Text style={[styles.subText, {fontFamily: getFontFamily(true, 'regular')}]}>
+		{content}
+		{children}
+	  </Text>
+	</View>
+);
+  
+// Functional Component for Search Content
+const SearchContent = ({ mainStyle, content, children }) => (
+	<View style={mainStyle}>
+	  <Text style={styles.searchText}>
+		{content}
+		{children}
+	  </Text>
+	</View>
+);
+  
+// Functional Component for Button Navigation
+const NavButton = ({ color, title, onPress }) => (
+	<Button color={color} title={title} onPress={onPress} />
+);
+  
+export { Wrapper, Container, Header, MainContent, SubContent, SearchContent, NavButton };

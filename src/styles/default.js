@@ -4,65 +4,98 @@
 * - default app styles
 */
 
-import React from 'react';
 import { StyleSheet } from 'react-native';
 
 // default style
-const styles = StyleSheet.create({
-	wrapper: {
+// define styles for components - define relative sizes...
+export const styles = StyleSheet.create({
+	// Container
+	container: {
 		flex: 1,
-		height: '95%',
-		backgroundColor: '#eceff4',
+		justifyContent: 'flex-start',
+		backgroundColor: '#FFFFFF'
 	},
-	screenHeader: {
-		marginTop: 1,
-		padding: 15,
-		backgroundColor: '#4c586a',
+
+	// Heading & text
+	heading: {
+		flex: .5,
+		alignItems: 'center',
+		justifyContent: 'center',
+		margin: 5,
+		padding: 5,
 	},
-	header: {
-		marginTop: 5,
-		marginBottom: 5,
-		color: '#4c566a',
-		fontSize: 20,
-		fontWeight: '400',
+	headingText: {
+		textAlign: 'center',
+		color: '#000000',
+		fontSize: 48,
+		fontWeight: 'bold',
 	},
-	h1: {
-		color: '#eceff4',
+
+	// Subheading & text
+	sub: {
+		flex: .5,
+		justifyContent: 'center',
+		margin: 5,
+		paddingHorizontal: 10,
+	},
+	subText: {
+		color: '#000000',
 		fontSize: 28,
-		fontWeight: '300',
 	},
-	h2: {
-		color: '#eceff4',
-		fontSize: 26,
-		fontWeight: '300',
+
+	// Search bar & text
+	search: {
+		flex: .5,
+		justifyContent: 'center',
+		margin: 10,
+		paddingHorizontal: 10,
+		backgroundColor: '#A73C5A',
+		borderRadius: 10,
 	},
-	h3: {
-		color: '#eceff4',
-		fontSize: 24,
-		fontWeight: '300',
+	searchText: {
+		color: '#FFFFFF',
+		fontSize: 16,
 	},
-	h4: {
-		color: '#eceff4',
-		fontSize: 22,
-		fontWeight: '300',
+	
+	// Content areas & text
+	content: {
+		flex: 3,
+		alignItems: 'left',
+		margin: 10,
+		padding: 10,
+		backgroundColor: '#FFD3CA',
+		borderRadius: 10,
 	},
-	main: {
-		marginTop: 15,
-		color: '#3b4252',
-		fontSize: 20,
+	contentText: {
+		color: '#000000',
+		fontSize: 16,
+		lineHeight: 30,
 	},
-	defaultContent: {
-		padding: 15,
+
+	// Button styles
+  	buttonBox: {
+		padding: 10,
 	},
-	defaultText: {
-		marginTop: 5,
-		marginBottom: 5,
-		fontSize: 18,
-		fontWeight: '300',	
+	buttonRowContainer: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
 	},
+	buttonBoxRow: {
+		flex: 1,
+		marginHorizontal: 10,
+	},
+
+	// Might not be needed with use of custom fonts
+	boldText: {
+		fontWeight: 'bold', // To make the text bold
+	},
+
+	// Photo styles
+	photo: {
+		width: '95%',
+		height: 215,
+		alignSelf: 'center',
+		margin: 10,
+		borderRadius: 10,
+	}
 });
-
-export {
-	styles,
-};
-

@@ -38,7 +38,7 @@ const DaisyListScreen = () => {
 
     try {
       // Fetch data from API
-      const response = await fetch(`https://perenual.com/api/species-list?key=sk-dOb66733c1ed39ca07613&q=${plantFilter}`);
+      const response = await fetch(`https://perenual.com/api/species-list?key=API-KEY&q=${plantFilter}`);
       const data = await response.json();
       //console.log(data); // Test output
 

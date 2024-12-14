@@ -30,7 +30,7 @@ const PlantDetailScreen = () => {
     // Fetch plant details by ID
     const fetchPlantDetails = async () => {
         try {
-            const response = await fetch(`https://perenual.com/api/species/details/${plantId}?key=sk-dOb66733c1ed39ca07613`);
+            const response = await fetch(`https://perenual.com/api/species/details/${plantId}?key=API-KEY`);
             const data = await response.json();
             setPlant(data); // Update state with the fetched plant details
         } catch (error) {
